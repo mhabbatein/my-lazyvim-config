@@ -51,21 +51,3 @@ require("lazy").setup({
     },
   },
 })
-
-local lspconfig = require("lspconfig")
-
-lspconfig.eslint.setup({
-  cmd = { "vscode-eslint" }, -- or path to the installed language server if not globally installed
-  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  root_dir = lspconfig.util.root_pattern(
-    ".eslintrc.js",
-    ".eslintrc",
-    ".eslintrc.json",
-    ".eslintrc.yml",
-    "package.json"
-  ),
-  settings = {
-    format = { enable = true },
-    lint = { enable = true },
-  },
-})
